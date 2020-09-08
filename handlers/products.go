@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"regexp"
 	"strconv"
-
 	"github.com/srkdongare/AppByNic/data"
 )
 
@@ -17,6 +16,8 @@ func NewProducts(l *log.Logger) *Products {
 	return &Products{l}
 }
 
+
+//Can be refactored using Gorilla
 func (p *Products) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 
 	if r.Method == http.MethodGet {
