@@ -7,12 +7,12 @@ import (
 	"os"
 	"os/signal"
 	"time"
-
 	"github.com/srkdongare/AppByNic/handlers"
 )
 
 func main() {
 
+	//Gorilla NOT implemented yet
 	l := log.New(os.Stdout, "product-api", log.LstdFlags)
 	hh := handlers.NewProducts(l)
 
