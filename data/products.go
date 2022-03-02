@@ -17,6 +17,7 @@ type Product struct {
 	CreatedOn   string  `json:"-"`
 	UpdatedOn   string  `json:"-"`
 	DeletedOn   string  `json:"-"`
+	Tag	string `json:"-"`
 }
 
 type Products []*Product
