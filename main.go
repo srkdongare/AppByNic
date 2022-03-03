@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/signal"
 	"time"
+
 	"github.com/srkdongare/AppByNic/handlers"
 )
 
@@ -29,7 +30,11 @@ func main() {
 		WriteTimeout: 1 * time.Second,
 	}
 
+<<<<<<< Updated upstream
 	//start the server
+=======
+	//starting the server
+>>>>>>> Stashed changes
 	go func() {
 		err := s.ListenAndServe()
 		if err != nil {
@@ -37,6 +42,7 @@ func main() {
 		}
 	}()
 
+	//wait for resource removal
 	sigChan := make(chan os.Signal)
 	signal.Notify(sigChan, os.Interrupt)
 	signal.Notify(sigChan, os.Kill)
