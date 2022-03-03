@@ -16,9 +16,11 @@ func main() {
 	l := log.New(os.Stdout, "product-api", log.LstdFlags)
 	hh := handlers.NewProducts(l)
 
+	//Adding Handler 
 	sm := http.NewServeMux()
 	sm.Handle("/", hh)
 
+	//webserver configuration
 	s := &http.Server{
 		Addr:         ":33333",
 		Handler:      sm,
@@ -27,6 +29,7 @@ func main() {
 		WriteTimeout: 1 * time.Second,
 	}
 
+	//start the server
 	go func() {
 		err := s.ListenAndServe()
 		if err != nil {
