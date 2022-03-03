@@ -17,7 +17,7 @@ func main() {
 	l := log.New(os.Stdout, "product-api", log.LstdFlags)
 	hh := handlers.NewProducts(l)
 
-	//Adding Handler 
+	//Adding Handler
 	sm := http.NewServeMux()
 	sm.Handle("/", hh)
 
@@ -30,11 +30,8 @@ func main() {
 		WriteTimeout: 1 * time.Second,
 	}
 
-<<<<<<< Updated upstream
 	//start the server
-=======
 	//starting the server
->>>>>>> Stashed changes
 	go func() {
 		err := s.ListenAndServe()
 		if err != nil {
